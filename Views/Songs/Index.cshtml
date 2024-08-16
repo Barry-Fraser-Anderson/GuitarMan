@@ -1,7 +1,29 @@
+@model List<Song>
+
 @{
     ViewData["Title"] = "Songs";
 }
 
 <div class="text-center">
     <h1 class="display-4">Songs</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Artist</th>
+                <th>Title</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var song in Model.OrderBy(s => s.Artist))
+            {
+                <tr>
+                    <td>@song.Artist</td>
+                    <td>@song.Title</td>
+                    <td>@song.Link</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
 </div>
