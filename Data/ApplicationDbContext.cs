@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GuitarMan.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GuitarMan.Data
 {
@@ -7,5 +8,7 @@ namespace GuitarMan.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+
+        public DbSet<Song> Songs { get; set; }
     }
 }
