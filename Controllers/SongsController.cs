@@ -18,5 +18,19 @@ namespace GuitarMan.Controllers
             List<Song> songs = _dbContext.Songs.ToList();
             return View(songs);
         }
+
+        public IActionResult CreateEditForm()
+        {
+            return View();
+        }
+
+        public IActionResult CreateEditOk(Song song)
+        {
+            _dbContext.Songs.Add(song);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
+

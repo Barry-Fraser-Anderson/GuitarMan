@@ -6,10 +6,10 @@ namespace GuitarMan.Models
     {
         public int Id { get; set; }
         [Required]
-        public string Artist { get; set; }
+        public string Artist { get; set; } = String.Empty;
         [Required]
-        public string Title { get; set; }
+        public string Title { get; set; } = String.Empty;
         [Required]
-        public string Link { get; set; }
+        public string Link { get; set; } = String.Empty;
     }
 }
