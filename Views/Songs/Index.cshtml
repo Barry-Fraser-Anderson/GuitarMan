@@ -23,9 +23,10 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th class="col-4">Artist</th>
-                    <th class="col-4">Title</th>
-                    <th class="col-2">Link</th>
+                    <th class="col-3">Artist</th>
+                    <th class="col-3">Title</th>
+                    <th class="col-3">Description</th>
+                    <th class="col-1">Link</th>
                     <th class="col-2">Action</th>
                 </tr>
             </thead>
@@ -35,6 +36,7 @@
                     <tr>
                         <td>@song.Artist</td>
                         <td>@song.Title</td>
+                        <td>@song.Description</td>
                         <td>@song.Link</td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@song.Id" class="btn btn-secondary">Edit</a>
