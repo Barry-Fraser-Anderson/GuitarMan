@@ -17,7 +17,7 @@
         <div class="row pb-3">
             <div class="col-6"></div>
             <div class="text-end">
-                <a asp-action="CreateEditForm" class="btn btn-secondary">Add new song</a>
+                <a asp-action="Create" class="btn btn-secondary">Add new song</a>
             </div>
         </div>
         
@@ -38,7 +38,7 @@
                         <td>@song.Title</td>
                         <td>@song.Link</td>
                         <td>
-                        <a asp-action="Delete" asp-route-id="@song.Id">Delete</a>
+                            <a asp-action="Delete" asp-route-id="@song.Id">Delete</a>
                         </td>
                     </tr>
                 }
