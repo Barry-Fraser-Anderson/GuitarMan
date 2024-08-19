@@ -23,6 +23,15 @@ namespace GuitarMan.Controllers
         {
             return View();
         }
+         
+        public IActionResult Delete(int id)
+        {
+            var song = _dbContext.Songs.SingleOrDefault(song => song.Id == id);
+            _dbContext.Songs.Remove(song);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
         public IActionResult CreateEditOk(Song song)
         {

@@ -27,6 +27,7 @@
                     <th>Artist</th>
                     <th>Title</th>
                     <th>Link</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,6 +37,9 @@
                         <td>@song.Artist</td>
                         <td>@song.Title</td>
                         <td>@song.Link</td>
+                        <td>
+                        <a asp-action="Delete" asp-route-id="@song.Id">Delete</a>
+                        </td>
                     </tr>
                 }
             </tbody>
