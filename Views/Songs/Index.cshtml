@@ -15,19 +15,18 @@
 
     <div class="card-body p-4">
         <div class="row pb-3">
-            <div class="col-6"></div>
             <div class="text-end">
-                <a asp-action="Create" class="btn btn-secondary">Add new song</a>
+                <a asp-action="Create" class="btn btn-primary">Add song</a>
             </div>
         </div>
         
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Artist</th>
-                    <th>Title</th>
-                    <th>Link</th>
-                    <th>Action</th>
+                    <th class="col-4">Artist</th>
+                    <th class="col-4">Title</th>
+                    <th class="col-2">Link</th>
+                    <th class="col-2">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,8 +37,8 @@
                         <td>@song.Title</td>
                         <td>@song.Link</td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@song.Id">Edit</a>
-                            <a asp-action="Delete" asp-route-id="@song.Id">Delete</a>
+                            <a asp-action="Edit" asp-route-id="@song.Id" class="btn btn-secondary">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@song.Id" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 }
