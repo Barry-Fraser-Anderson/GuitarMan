@@ -13,9 +13,16 @@ namespace GuitarMan.Controllers
             _dbContext = dbContext;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(string sortOrder)
         {
-            List<Song> songs = _dbContext.Songs.ToList();
+            List<Song> songs;
+
+            songs = sortOrder switch
+            {
+                "Title" => _dbContext.Songs.OrderBy(s => s.Title).ToList(),
+                _ => _dbContext.Songs.OrderBy(s => s.Artist).ToList()
+            };
             return View(songs);
         }
 
