@@ -37,8 +37,11 @@ namespace GuitarMan.Controllers
         public IActionResult Delete(int id)
         {
             var song = _dbContext.Songs.FirstOrDefault(song => song.Id == id);
-            _dbContext.Songs.Remove(song);
-            _dbContext.SaveChanges();
+            if (song is not null)
+            {
+                _dbContext.Songs.Remove(song);
+                _dbContext.SaveChanges();
+            }
 
             return RedirectToAction("Index");
         }
