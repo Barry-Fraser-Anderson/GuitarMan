@@ -41,7 +41,9 @@
                         <td>@song.Artist</td>
                         <td>@song.Title</td>
                         <td>@song.Description</td>
-                        <td>@song.Link</td>
+                        <td><a href="@song.Link" target="_blank"><i class="bi-link h3"></i></a>
+
+                    </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@song.Id" class="btn btn-secondary">Edit</a>
                             <a asp-action="Delete" asp-route-id="@song.Id" class="btn btn-danger">Delete</a>
