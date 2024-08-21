@@ -1,20 +1,19 @@
 # GuitarMan
 
-An MVC exercise.
-
-Sorting by Artist or Title is supported.
-Clicking on the 'link' button open the link in another window.
-
-It is still a 'work-in-progress'.
-In particular, I intend to add extra sections for music theory, chords, tips etc.
-
-## Description
-
 A bookmarks manager using C# ASP.NET MVC.
 
 I wrote this as I found that my browser bookmarks 'Music' folder was becoming tricky to navigate.
 
 I am already finding it useful.
+
+## Description
+
+Sorting by Artist or Title is supported by clicking the column header.
+
+Clicking on the 'link' button opens the link in another window.
+
+It is still a 'work-in-progress'.
+In particular, I intend to add extra sections for music theory, chords, tips etc.
 
 ## Screenshots
 
