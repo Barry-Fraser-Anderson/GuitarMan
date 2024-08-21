@@ -17,13 +17,13 @@
         <form method="post" asp-controller="Songs" asp-action="Edit">
             <input type="hidden" asp-for="Id" />
             <label>Artist</label>
-            <input class="form-control" type="text" asp-for="Artist" required />
+            <input class="form-control mb-3" type="text" asp-for="Artist" required />
             <label>Title</label>
-            <input class="form-control" type="text" asp-for="Title" required />
+            <input class="form-control mb-3" type="text" asp-for="Title" required />
             <label>Description</label>
-            <input class="form-control" type="text" asp-for="Description" />
+            <input class="form-control mb-3" type="text" asp-for="Description" />
             <label>Link</label>
-            <input class="form-control" type="text" asp-for="Link" required />
+            <input class="form-control mb-3" type="text" asp-for="Link" required />
 
             <div class="mt-4">
                 <button class="btn btn-primary" type="submit">Ok</button>
