@@ -1,6 +1,7 @@
 using GuitarMan.Data;
 using GuitarMan.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace GuitarMan.Controllers
@@ -14,36 +15,36 @@ namespace GuitarMan.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(string sortOrder)
+        public async Task<ActionResult> Index(string sortOrder)
         {
-            List<Song> songs;
+        //    List<Song> songs;
 
-            songs = sortOrder switch
+            var songs = sortOrder switch
             {
-                "Title" => _dbContext.Songs.OrderBy(s => s.Title).ToList(),
-                _ => _dbContext.Songs.OrderBy(s => s.Artist).ToList()
+                "Title" => await _dbContext.Songs.OrderBy(s => s.Title).ToListAsync(),
+                _ => await _dbContext.Songs.OrderBy(s => s.Artist).ToListAsync()
             };
             return View(songs);
         }
 
-        public IActionResult Create()
+        public ActionResult Create()
         {
             return View();
         }
 
      
         [HttpPost]
-        public IActionResult Create(Song song)
+        public async Task<ActionResult> Create(Song song)
         {
-            _dbContext.Songs.Add(song);
-            _dbContext.SaveChanges();
+            await _dbContext.Songs.AddAsync(song);
+            await _dbContext.SaveChangesAsync();
 
             return RedirectToAction("Index");
         }
 
-        public IActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var song = _dbContext.Songs.FirstOrDefault(song => song.Id == id);
+            var song = await _dbContext.Songs.FirstOrDefaultAsync(song => song.Id == id);
             if (song is not null)
             {
                 _dbContext.Songs.Remove(song);
@@ -53,14 +54,14 @@ namespace GuitarMan.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
-            var song = _dbContext.Songs.FirstOrDefault(song => song.Id == id);
+            var song = await _dbContext.Songs.FirstOrDefaultAsync(song => song.Id == id);
             return View(song);
         }
 
         [HttpPost]
-        public IActionResult Edit(Song song)
+        public ActionResult Edit(Song song)
         {
             _dbContext.Songs.Update(song);
             _dbContext.SaveChanges();
