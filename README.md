@@ -1,10 +1,8 @@
 # GuitarMan
 
-A bookmarks manager using C# ASP.NET MVC.
+A bookmarks manager using C#, ASP.NET MVC.
 
 I wrote this as I found that my browser bookmarks 'Music' folder was becoming tricky to navigate.
-
-I am already finding it useful.
 
 ## Description
 
